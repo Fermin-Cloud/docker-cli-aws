@@ -1,0 +1,10 @@
+services:
+  aws-cli:
+    image: public.ecr.aws/aws-cli/aws-cli
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "9000:9000"
