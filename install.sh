@@ -7,7 +7,7 @@ error_exit() {
 
 command -v docker &> /dev/null || error_exit "Docker is not installed"
 docker info &> /dev/null || error_exit "Docker is not running"
-[ -f "Dockerfile" ] || error_exit "No Dockerfile found in the current directory."
+[ -f "dockerfile" ] || error_exit "No Dockerfile found in the current directory."
 [ -w "." ] || error_exit "You do not have write permissions in the current directory"
 [ -f ".env" ] || echo "The .env file was not found"
 

@@ -44,7 +44,7 @@ async def translate_text(request: TranslationRequest):
 
 @app.get("/")
 def read_root():
-    return {"message": "¡Servidor en ejecución!"}
+    return {"message": "Server running!"}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
