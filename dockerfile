@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-# Instalar dependencias
+# Install dependencies
 RUN apt-get update && apt-get install -y \
     curl \
     unzip \
@@ -8,17 +8,17 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-venv 
 
-# Instalar AWS CLI
+# Install AWS CLI
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && \
     ./aws/install && \
     rm awscliv2.zip
 
-# Configurar entorno de trabajo
+# Configure work environment
 WORKDIR /app
 COPY requirements.txt .
 
-# Crear y activar el entorno virtual
+# Create and activate the virtual environment
 RUN python3 -m venv venv && \
     . venv/bin/activate && \
     pip install --upgrade pip && \
